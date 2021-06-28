@@ -1,11 +1,17 @@
 from django.contrib import admin
 from .models import Avatar, Bloodline
 
+
 class AvatarAdmin(admin.ModelAdmin):
-    list_display = ('name', 'bloodline', 'email_address', 'location')
+    list_display = ('bloodline', 'power')
+
+
+class BloodlineAdmin(admin.ModelAdmin):
+    list_display = ('power_level')
+
 
 # Register your models here.
-admin.site.register(Avatar)
+admin.site.register(Avatar, AvatarAdmin)
 admin.site.register(Bloodline)
 # headers and titles
 admin.site.site_header = 'PARAGON ADMIN PANEL'
