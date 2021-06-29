@@ -3,11 +3,7 @@ from .models import Avatar, Bloodline
 
 
 class AvatarAdmin(admin.ModelAdmin):
-    list_display = ('bloodline', 'power')
-
-
-class BloodlineAdmin(admin.ModelAdmin):
-    list_display = ('power_level')
+    list_display = ('bloodline', 'power', 'name')
 
 
 # Register your models here.
