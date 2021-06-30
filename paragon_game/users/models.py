@@ -13,3 +13,15 @@ class Player(models.Model):
 
     def __str__(self):
         return f"{self.username}"
+
+
+class Group(models.Model):
+    name = models.CharField(max_length=369, unique=True)
+    members = models.ManyToManyField("Player", blank=True, default=[""])
+    logo = models.ImageField(unique=True)
+    doc = models.TextField(unique=True, verbose_name="Documentation")
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.name}"
