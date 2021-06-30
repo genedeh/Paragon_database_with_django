@@ -25,3 +25,12 @@ class Group(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Member(models.Model):
+    group_name = models.ForeignKey("Group", on_delete=models.CASCADE)
+    name = models.ForeignKey(Player, on_delete=models.CASCADE)
+    position = models.CharField(max_length=249, help_text="You can either be a defence, midfielder, capturer")
+
+    def __str__(self):
+        return f"{self.name}"
