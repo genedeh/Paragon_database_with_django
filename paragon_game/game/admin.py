@@ -6,9 +6,13 @@ class AvatarAdmin(admin.ModelAdmin):
     list_display = ('bloodline', 'power', 'name')
 
 
+class BloodlineAdmin(admin.ModelAdmin):
+    list_display = ("name", "power_level")
+
+
 # Register your models here.
 admin.site.register(Avatar, AvatarAdmin)
-admin.site.register(Bloodline)
+admin.site.register(Bloodline, BloodlineAdmin)
 # headers and titles
 admin.site.site_header = 'PARAGON ADMIN PANEL'
 admin.site.site_title = 'PARAGON GAME SITE ADMIN'
