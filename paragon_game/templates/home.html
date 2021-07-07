@@ -3,9 +3,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}PARAGON🌌🌌{% endblock title %}</title>
 </head>
 <body>
-
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'game:home' %}">PARAGON</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="#">Avatars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning " href="#">Bloodlines</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary " href="#">Create a group</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark " href="#">Players</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="#" tabindex="-1" aria-disabled="true">Sign Up For Tournament</a>
+        </li>
+      </ul>
+      <li class="nav-item">
+          <a href="#" class="btn btn-primary ml-3">Login</a>
+      </li>
+      <li class="nav-item">
+          <a href="#" class="btn btn-primary ml-3">Sign  up</a>
+      </li>
+    </div>
+  </div>
+</nav>{% endblock content %}
 </body>
 </html>
