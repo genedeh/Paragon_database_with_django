@@ -17,7 +17,14 @@ class Player(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=369, unique=True)
-    members = models.ManyToManyField("Player", blank=True, default=[""])
+    leader = models.OneToOneField("Player", on_delete=models.CASCADE, unique=True, primary_key=True,
+                                  related_name="+")
+    defender = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+                                    related_name="+", null=True)
+    middlemen = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+                                     related_name="+", null=True)
+    capturer = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+                                    related_name='+', null=True)
     logo = models.ImageField(unique=True)
     doc = models.TextField(unique=True, verbose_name="Documentation")
     created = models.DateTimeField(auto_now_add=True)
@@ -25,6 +32,3 @@ class Group(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-
-
-
