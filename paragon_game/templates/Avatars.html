@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PARAGON🌌🌌: Avatars{% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+{%for ava in avatar %}
+<hr class="text-dark">
+<div class="card mb-3 text-danger bg-dark shadow-lg p-3 rounded" style="max-width: 540px;" >
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="media/{{ava.image}}" class="card-img" alt="{{ava.name}}" width="20" height="159">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ava.name}}</h5>
+        <p class="card-text">End Scene: {{ava.bio}}</p>
+        <p class="card-text"><small class="text-danger">Power: {{ava.power}}</small></p>
+        <p class="card-text"><small class="text-danger">Bloodline: {{ava.bloodline}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{%endfor%}
+{% endblock content %}
+</body>
+</html>
