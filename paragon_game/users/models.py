@@ -32,3 +32,11 @@ class Group(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+
+class Friend(models.Model):
+    name = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='+')
+    friend = models.OneToOneField(Player, on_delete=models.CASCADE, related_name='+')
+
+    def __str__(self):
+        return f"{self.friend}"
