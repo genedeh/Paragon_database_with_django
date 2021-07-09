@@ -39,8 +39,14 @@ class Friend(models.Model):
     friend = models.ForeignKey(Player, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.friend}"
+        return f"{self.friend} is  a friend to {self.name}"
 
-# class Message(models.Model):
-#     From = models.CharField(max_length=249)
-#     To = models.ForeignKey(Friend, on_delete=models.CASCADE)
+
+class Message(models.Model):
+    From = models.CharField(max_length=249)
+    To = models.ForeignKey(Friend, on_delete=models.CASCADE)
+    message = models.TextField()
+    created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+
+    def __str__(self):
+        return f"This message is from {self.From} and to {self.To.friend}"

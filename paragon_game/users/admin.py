@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Player, Group, Friend
+from .models import Player, Group, Friend, Message
 
 
 # Register your models here.
@@ -19,4 +19,5 @@ class GroupAdmin(admin.ModelAdmin):
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(Friend)
+admin.site.register(Message)
 # admin.site.register(Member, MemberAdmin)
