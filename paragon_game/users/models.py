@@ -35,8 +35,12 @@ class Group(models.Model):
 
 
 class Friend(models.Model):
-    name = models.ForeignKey(Player, on_delete=models.CASCADE, related_name='+')
-    friend = models.OneToOneField(Player, on_delete=models.CASCADE, related_name='+')
+    name = models.CharField(max_length=245)
+    friend = models.ForeignKey(Player, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.friend}"
+
+# class Message(models.Model):
+#     From = models.CharField(max_length=249)
+#     To = models.ForeignKey(Friend, on_delete=models.CASCADE)
