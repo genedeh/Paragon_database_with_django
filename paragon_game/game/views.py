@@ -1,17 +1,16 @@
 from django.shortcuts import render
 from .models import Avatar
+from users.models import Player
 
 
 # Create your views here.
-def home_view(request):
-    avatar = Avatar.objects.filter(name__contains="")
-    dis_avatar = avatar.order_by("bio")[2]
-    avatar2 = Avatar.objects.filter(name__contains="h")
-    dis_avatar2 = avatar2.order_by("bio")[1]
-    avatar3 = Avatar.objects.filter(name__contains="sh")
-    dis_avatar3 = avatar3.order_by("bio")[0]
+def num_of_tables_in_model(model):
+    all_model = model.objects.count
+    return all_model
 
-    return render(request, "home.html", {"dis_ava": dis_avatar, "dis_ava2":dis_avatar2, "dis_ava3":dis_avatar3})
+
+def home_view(request):
+    return render(request, "home.html", {"avatar_num": num_of_tables_in_model(Avatar), "player_num": num_of_tables_in_model(Player)})
 
 
 def avatar_view(request):
