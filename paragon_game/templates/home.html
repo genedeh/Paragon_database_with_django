@@ -19,8 +19,18 @@
     <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar4.jpg" class="img-thumbnail" alt=""></a></div>
   </div>
   <hr>
-  <p class="text-dark font-weight-bold text-center text-uppercase">we have up to {{avatar_num}} AVATARS and {{player_num}} users</p>
+  <p class="text-dark font-weight-bold text-center text-uppercase">we have up to ({{avatar_num}}) AVATARS, ({{bloodline_num}}) bloodlines and ({{player_num}}) users</p>
   <hr>
+  <hr>
+  <h1 class="text-dark text-center font-weight-bolder" >BLOODLINES</h1>
+  <hr>
+  <div class="row">
+    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/CrystalNew.png" class="img-thumbnail" alt=""></a></div>
+    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Kaguya.png" class="img-thumbnail" alt=""></a></div>
+    <div class="w-100"></div>
+    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Obito_MS.png" class="img-thumbnail" alt=""></a></div>
+    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Sharingan_Triple.png" class="img-thumbnail" alt=""></a></div>
+  </div>
 </div>
 <div class="card bg-dark text-white shadow-lg m-4 rounded">
   <img src="media/slide1.jpg" class="card-img" alt="...">

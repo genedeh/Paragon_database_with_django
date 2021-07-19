@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}PARAGON🌌🌌: Bloodlines{% endblock title %}</title>
 </head>
 <body>
 {% block content %}
@@ -19,8 +19,8 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title text-primary">{{blood.name}}</h5>
-        <p class="card-text"><small class="text-warning">Power_level: {{blood.power_level}}</small></p>
+        <h5 class="card-title text-primary text-uppercase text-center">{{blood.name}}</h5>
+        <p class="card-text"><small class="text-warning text-center">Power_level: {{blood.power_level}}</small></p>
       </div>
     </div>
   </div>

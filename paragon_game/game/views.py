@@ -11,7 +11,8 @@ def num_of_tables_in_model(model):
 
 def home_view(request):
     return render(request, "home.html",
-                  {"avatar_num": num_of_tables_in_model(Avatar), "player_num": num_of_tables_in_model(Player)})
+                  {"avatar_num": num_of_tables_in_model(Avatar), "player_num": num_of_tables_in_model(Player),
+                   "bloodline_num": num_of_tables_in_model(Bloodline)})
 
 
 def avatar_view(request):
