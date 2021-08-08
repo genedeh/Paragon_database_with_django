@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     # PERSONAL APPS
     'users',
     'game',
-    'django-crispy-forms'
+    'crispy-forms',
 ]
 
 MIDDLEWARE = [
