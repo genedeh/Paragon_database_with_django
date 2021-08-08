@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     # PERSONAL APPS
     'users',
     'game',
-    'crispy-forms',
+    # 3rd party packages
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
