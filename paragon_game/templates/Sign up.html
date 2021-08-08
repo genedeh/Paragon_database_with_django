@@ -9,11 +9,11 @@
 </head>
 <body>
 {% block content %}
-<div class="container card-body">
-<form action="" method="post">
+<div class="container card mt-3  mb-3 border-primary center bg-dark text-danger">
+<form action="" method="post" class="card-body text-center text-uppercase">
    {% csrf_token %}
         {{form|crispy}}
-    <button class="text-white btn btn-dark m-3">Sign</button>
+    <button class="text-white btn btn-danger m-3">Sign in</button>
 </form>
 </div>
 {% endblock content %}
