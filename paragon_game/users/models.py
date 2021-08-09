@@ -1,7 +1,8 @@
 from django.db import models
 from game.models import Avatar
 from django_countries.fields import CountryField
-
+import random
+import string
 
 
 class Player(models.Model):
@@ -19,13 +20,13 @@ class Player(models.Model):
 
 class Group(models.Model):
     name = models.CharField(max_length=369, unique=True)
-    leader = models.OneToOneField("Player", on_delete=models.CASCADE, unique=True, primary_key=True,
+    leader = models.OneToOneField("Player", on_delete=models.PROTECT, unique=True, primary_key=True,
                                   related_name="+")
-    defender = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+    defender = models.OneToOneField("Player", on_delete=models.PROTECT, default="", unique=True, blank=True,
                                     related_name="+", null=True)
-    middlemen = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+    middlemen = models.OneToOneField("Player", on_delete=models.PROTECT, default="", unique=True, blank=True,
                                      related_name="+", null=True)
-    capturer = models.OneToOneField("Player", on_delete=models.CASCADE, default="", unique=True, blank=True,
+    capturer = models.OneToOneField("Player", on_delete=models.PROTECT, default="", unique=True, blank=True,
                                     related_name='+', null=True)
     logo = models.ImageField(unique=True)
     doc = models.TextField(unique=True, verbose_name="Documentation")
