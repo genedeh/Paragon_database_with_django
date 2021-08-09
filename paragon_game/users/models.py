@@ -1,5 +1,7 @@
 from django.db import models
 from game.models import Avatar
+from django_countries.fields import CountryField
+
 
 
 class Player(models.Model):
@@ -7,7 +9,7 @@ class Player(models.Model):
     password = models.CharField(max_length=20, help_text="Must have up to 8 - 20 characters", unique=True)
     email_address = models.EmailField()
     bio = models.TextField(max_length=500, blank=True, default="")
-    location = models.CharField(max_length=30, help_text="Make sure it is a valid country or city")
+    location = CountryField(blank_label='(SELECT YOUR COUNTRY/LOCATION)')
     birth_date = models.DateField(null=True, blank=True)
     avatar = models.ForeignKey(Avatar, on_delete=models.CASCADE)
 

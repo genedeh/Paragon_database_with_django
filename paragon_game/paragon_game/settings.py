@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'game',
     # 3rd party packages
     'crispy_forms',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
