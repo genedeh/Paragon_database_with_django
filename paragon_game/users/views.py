@@ -17,6 +17,6 @@ def sign_in_view(request):
     return render(request, "Sign up.html", {'form': form})
 
 
-class UserView(DetailView):
+class PlayerView(DetailView):
     model = Player
     template_name = r'C:\Users\KidChaos\PycharmProjects\Paragon_with_django\paragon_game\templates\user.html'
