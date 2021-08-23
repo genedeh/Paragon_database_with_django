@@ -8,53 +8,65 @@
 <body>
 {% block content %}
 <div class="container">
-  <hr>
-  <h1 class="text-dark text-center font-weight-bolder" >AVATARS</h1>
-  <hr>
-  <div class="row">
-    <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar1.jpg" class="img-thumbnail" alt=""></a></div>
-    <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar2.jpg" class="img-thumbnail" alt=""></a></div>
-    <div class="w-100"></div>
-    <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar3.jfif" class="img-thumbnail" alt=""></a></div>
-    <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar4.jpg" class="img-thumbnail" alt=""></a></div>
-  </div>
-  <hr>
-  <p class="text-dark font-weight-bold text-center text-uppercase">we have up to ({{avatar_num}}) AVATARS, ({{bloodline_num}}) bloodlines and ({{player_num}}) users</p>
-  <hr>
-  <hr>
-  <h1 class="text-dark text-center font-weight-bolder" >BLOODLINES</h1>
-  <hr>
-  <div class="row">
-    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/CrystalNew.png" class="img-thumbnail" alt=""></a></div>
-    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Kaguya.png" class="img-thumbnail" alt=""></a></div>
-    <div class="w-100"></div>
-    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Obito_MS.png" class="img-thumbnail" alt=""></a></div>
-    <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Sharingan_Triple.png" class="img-thumbnail" alt=""></a></div>
-  </div>
+    <hr>
+    <h1 class="text-dark text-center font-weight-bolder">AVATARS</h1>
+    <hr>
+    <div class="row">
+        <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar1.jpg" class="img-thumbnail"
+                                                                 alt=""></a></div>
+        <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar2.jpg" class="img-thumbnail"
+                                                                 alt=""></a></div>
+        <div class="w-100"></div>
+        <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar3.jfif"
+                                                                 class="img-thumbnail" alt=""></a></div>
+        <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar4.jpg" class="img-thumbnail"
+                                                                 alt=""></a></div>
+    </div>
+    <hr>
+    <p class="text-dark font-weight-bold text-center text-uppercase">we have up to ({{avatar_num}}) AVATARS,
+        ({{bloodline_num}}) bloodlines and ({{player_num}}) users</p>
+    <hr>
+    <hr>
+    <h1 class="text-dark text-center font-weight-bolder">BLOODLINES</h1>
+    <hr>
+    <div class="row">
+        <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/CrystalNew.png" class="img-thumbnail"
+                                                                    alt=""></a></div>
+        <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Kaguya.png" class="img-thumbnail" alt=""></a>
+        </div>
+        <div class="w-100"></div>
+        <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Obito_MS.png" class="img-thumbnail"
+                                                                    alt=""></a></div>
+        <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/Sharingan_Triple.png"
+                                                                    class="img-thumbnail" alt=""></a></div>
+    </div>
 </div>
 <div class="card bg-dark text-white shadow-lg m-4 rounded">
-  <img src="media/slide1.jpg" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title text-dark text-center font-weight-bolder">PLAY GAMES</h5>
-    <p class="card-text text-uppercase text-center">We have it all and this is the para awesome games<p class="card-text">
-    <a href="" class="btn btn-danger">PLAY</a>
-  </div>
+    <img src="media/slide1.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title text-primary text-center font-weight-bolder">PLAY GAMES</h5>
+        <p class="card-text text-uppercase text-center">We have it all and this is the para awesome games
+        <p class="card-text">
+            <a href="" class="btn btn-success">PLAY</a>
+    </div>
 </div>
 <div class="card bg-dark text-white shadow-lg m-4 rounded">
-  <img src="media/slide2.jpg" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title text-danger text-center font-weight-bolder">GROUPS</h5>
-    <p class="card-text text-uppercase text-center">We have great groups and great members</p>
-    <a href="" class="btn btn-danger text-center">GROUP</a>
-  </div>
+    <img src="media/slide2.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title text-primary text-center font-weight-bolder">GROUPS</h5>
+        <p class="card-text text-uppercase text-center">We have great groups and great members</p>
+        <a href="" class="btn btn-success text-center">GROUP</a>
+    </div>
 </div>
 <div class="card bg-dark text-white shadow-lg m-4 rounded">
-  <img src="media/slide3.jfif" class="card-img" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="card-title text-danger text-center font-weight-bolder">TOURNAMENT</h5>
-    <p class="card-text text-uppercase text-center">We have tournaments to show that you and your team are the top players<p class="card-text">
-    <a href="" class="btn btn-danger text-center">TRY OUT</a>
-  </div>
+    <img src="media/slide3.jfif" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title text-primary text-center font-weight-bolder">TOURNAMENT</h5>
+        <p class="card-text text-uppercase text-center">We have tournaments to show that you and your team are the top
+            players
+        <p class="card-text">
+            <a href="" class="btn btn-success text-center">TRY OUT</a>
+    </div>
 </div>
 <!--caroulsel-->
 {% endblock content %}

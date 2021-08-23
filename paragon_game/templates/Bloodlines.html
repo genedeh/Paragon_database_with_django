@@ -9,26 +9,30 @@
 {% block content %}
 <input type="text" class="m-4" placeholder="Search">
 <button type="submit" class="btn rounded btn-warning m-4">Search</button>
-{%for blood in bloodline %}
 <div class="row">
-<hr class="text-dark">
-<div class="card mb-3 text-primary bg-dark shadow-lg p-3 rounded col-sm" style="max-width: 540px;" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="media/{{blood.symbol}}" class="card-img img-thumbnail" alt="{{blood.name}}">
+    {%for blood in bloodline %}
+    <!--<div class="row">-->
+    <hr class="text-dark">
+    <div class="card mb-3 text-primary bg-dark shadow-lg p-3 rounded col-sm" style="max-width: 540px;"
+         id="{{blood.name}}">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="media/{{blood.symbol}}" class="card-img img-thumbnail bg-success" alt="{{blood.name}}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-primary text-uppercase text-center">{{blood.name}}</h5>
+                    <p class="card-text"><small class="text-success text-center">Power_level:
+                        {{blood.power_level}}</small></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title text-primary text-uppercase text-center">{{blood.name}}</h5>
-        <p class="card-text"><small class="text-warning text-center">Power_level: {{blood.power_level}}</small></p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!--<div class="w-100"></div>-->
+    <!--<div class="w-100"></div>-->
+    <!--</div>-->
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock content %}
 </body>
 </html>

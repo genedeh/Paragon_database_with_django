@@ -5,44 +5,47 @@
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="static/style.css">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
 <body class="">
 <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand font-weight-bolder" href="{% url 'game:home' %}">PARAGON</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">🎮</span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-warning" href="{% url 'game:avatars' %}">Avatars</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-warning " href="{% url 'game:bloodlines' %}">Bloodlines</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary " href="#">Create a group</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark " href="#">Players</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="#" tabindex="-1" aria-disabled="true">Sign Up For Tournament</a>
-        </li>
-      </ul>
-      <li class="nav-item">
-          <a href="#" class="btn btn-primary ml-3">Login</a>
-      </li>
-      <li class="nav-item">
-      <a href="{% url 'users:Signin'  %}" class="btn btn-primary ml-3">Sign up</a>
-      </li>
+    <div class="container-fluid">
+        <a class="navbar-brand font-weight-bolder" href="{% url 'game:home' %}">PARAGON</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">🎮</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="{% url 'game:avatars' %}">Avatars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success " href="{% url 'game:bloodlines' %}">Bloodlines</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success " href="#">Create a group</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success " href="#">Players</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-success" href="#" tabindex="-1" aria-disabled="true">Sign Up For
+                        Tournament</a>
+                </li>
+            </ul>
+            <li class="nav-item">
+                <a href="#" class="btn btn-success mbt-3">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'users:Signin'  %}" class="btn btn-success mbt-3">Sign up</a>
+            </li>
+        </div>
     </div>
-  </div>
 </nav>
 
 {% block content %}{% endblock content %}
