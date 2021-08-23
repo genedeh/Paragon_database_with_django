@@ -4,6 +4,7 @@ from .models import Avatar, Bloodline
 
 class AvatarAdmin(admin.ModelAdmin):
     list_display = ('name', 'bloodline', 'power')
+    search_fields = ['name']
 
 
 class BloodlineAdmin(admin.ModelAdmin):

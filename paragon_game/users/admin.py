@@ -6,6 +6,10 @@ from .models import Player, Group, Friend, Message
 
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ("username", "avatar", "birth_date", "location")
+    prepopulated_fields = {
+        'slug': ['username']
+    }
+    autocomplete_fields = ['avatar']
 
 
 class GroupAdmin(admin.ModelAdmin):
