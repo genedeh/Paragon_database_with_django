@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+from django.template.defaultfilters import slugify
+
 from .forms import PlayerSigninForm
 from .models import Player
+from django.urls import reverse
 from django.views.generic import DetailView
 
 
@@ -9,9 +12,10 @@ def sign_in_view(request):
     if request.method == "POST":
         form = PlayerSigninForm(request.POST)
         if form.is_valid():
-            # print(form.cleaned_data['location'])
-            form.save()
-            return redirect("game:home")
+            post = form.save(commit=False)
+            post.slug = slugify(post.username)
+            post.save()
+            return redirect(post.get_absolute_url())
     else:
         form = PlayerSigninForm
     return render(request, "Sign up.html", {'form': form})
