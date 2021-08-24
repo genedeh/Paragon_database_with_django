@@ -25,17 +25,16 @@ def login_view(request, error=""):
         form = PlayerLoginForm(request.POST)
         username = request.POST['username']
         password = request.POST['password']
-        if Player.objects.filter(username=username) and Player.objects.filter(password=password):
-            # p = Player(username=username, password=password)
-            print('--------------------------------------')
-            play = Player.objects.filter(username=username)
+
+        if Player.objects.filter(username=username) and Player.objects.get(
+                password=password).username == username:
+            play = Player.objects.filter(password=password)
             play_list = list(play)
             for p in play_list:
                 join_url = p.get_absolute_url()
-            print('--------------------------------------')
             return redirect(join_url)
         else:
-            error = "username or password is  not correct please check you username and password"
+            error = "  Username or Password is  not correct please check you Username and Password."
     else:
         form = PlayerLoginForm
     return render(request, "login.html", {'form': form, 'error': error})
