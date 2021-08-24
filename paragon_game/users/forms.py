@@ -14,3 +14,8 @@ class PlayerSigninForm(ModelForm):
     class Meta:
         model = Player
         fields = ['username', 'password', 'bio', 'email_address', 'location', 'birth_date', 'avatar']
+
+
+class PlayerLoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Username...'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password...'}))
