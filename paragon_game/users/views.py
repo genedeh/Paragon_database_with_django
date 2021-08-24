@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 from django.template.defaultfilters import slugify
 
-from .forms import PlayerSigninForm
+from .forms import PlayerSigninForm, PlayerLoginForm
 from .models import Player
-from django.urls import reverse
 from django.views.generic import DetailView
 
 
@@ -19,6 +18,27 @@ def sign_in_view(request):
     else:
         form = PlayerSigninForm
     return render(request, "Sign up.html", {'form': form})
+
+
+def login_view(request, error=""):
+    if request.method == 'POST':
+        form = PlayerLoginForm(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        if Player.objects.filter(username=username) and Player.objects.filter(password=password):
+            # p = Player(username=username, password=password)
+            print('--------------------------------------')
+            play = Player.objects.filter(username=username)
+            play_list = list(play)
+            for p in play_list:
+                join_url = p.get_absolute_url()
+            print('--------------------------------------')
+            return redirect(join_url)
+        else:
+            error = "username or password is  not correct please check you username and password"
+    else:
+        form = PlayerLoginForm
+    return render(request, "login.html", {'form': form, 'error': error})
 
 
 class PlayerView(DetailView):
