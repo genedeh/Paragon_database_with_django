@@ -8,6 +8,20 @@
 </head>
 <body>
 {% block content %}
+<style>
+    .signin-btn {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+</style>
+<br>
 <form action="" method="post">
     {% csrf_token %}
     <div class="container">
@@ -39,8 +53,8 @@
             {{ form.bio|as_crispy_field }}
         </div>
         <div class="container">
-            <button class="text-white btn btn-success m-3">Sign Up</button>
-            <a href="{% url 'game:home' %}" class="btn btn-danger ">Cancel</a>
+            <button class="text-white btn btn-dark signin-btn">Sign Up</button>
+            <a href="{% url 'game:home' %}" class="btn btn-danger signin-btn ">Cancel</a>
         </div>
     </div>
 </form>

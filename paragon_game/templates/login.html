@@ -8,6 +8,19 @@
 </head>
 <body>
 {% block content %}
+<style>
+    .login-btn {
+    padding: 13px 20px 12px;
+    background-color: #000;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+</style>
 <br>
 {% if error == "" %}
 
@@ -36,9 +49,13 @@
                 {{ form.password|as_crispy_field }}
             </div>
         </div>
-        <a href="{% url 'users:Signin' %}" class="m-4">Create New Account ?.</a>
         <br>
-        <button type="submit" class="btn btn-success m-4">Login</button>
+        <hr>
+        <a href="{% url 'users:Signin' %}" class="btn btn-primary  login-btn">Create New Account ?</a>
+        <br>
+        <a href="{% url 'game:home' %}" class="login-btn btn btn-danger">Cancel</a>
+        <br>
+        <button type="submit" class="btn btn-dark login-btn">Login</button>
     </div>
 </form>
 <br>
