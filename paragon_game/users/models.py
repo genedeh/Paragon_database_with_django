@@ -35,28 +35,10 @@ class Group(models.Model):
                                      related_name="middlemen", null=True)
     capturer = models.OneToOneField("Player", on_delete=models.PROTECT, default="", unique=True, blank=True,
                                     related_name='capturer', null=True)
-    logo = models.ImageField(unique=True)
+    logo = models.ImageField()
     doc = models.TextField(unique=True, verbose_name="Documentation")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.name}"
-
-
-class Friend(models.Model):
-    name = models.CharField(max_length=245)
-    friend = models.ForeignKey(Player, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return f"{self.friend} is  a friend to {self.name}"
-
-
-class Message(models.Model):
-    From = models.CharField(max_length=249)
-    To = models.ForeignKey(Friend, on_delete=models.PROTECT)
-    message = models.TextField()
-    created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-
-    def __str__(self):
-        return f"This message is from {self.From} and to {self.To.name}"
