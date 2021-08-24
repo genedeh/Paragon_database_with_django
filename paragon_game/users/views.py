@@ -26,13 +26,15 @@ def login_view(request, error=""):
         username = request.POST['username']
         password = request.POST['password']
 
-        if Player.objects.filter(username=username) and Player.objects.get(
-                password=password).username == username:
-            play = Player.objects.filter(password=password)
-            play_list = list(play)
-            for p in play_list:
-                join_url = p.get_absolute_url()
-            return redirect(join_url)
+        if Player.objects.filter(username=username):
+            if Player.objects.filter(password=password):
+                play = Player.objects.filter(password=password)
+                play_list = list(play)
+                for p in play_list:
+                    join_url = p.get_absolute_url()
+                return redirect(join_url)
+            else:
+                error = "  Username or Password is  not correct please check you Username and Password."
         else:
             error = "  Username or Password is  not correct please check you Username and Password."
     else:
