@@ -2,28 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Player {{object.username}} {% endblock title %}</title>
+    <title>{% block title %}Player ( {{object.username}} ) {% endblock title %}</title>
 </head>
 <body>
 {% block content %}
-<main style="background-color:#333;" class="text-light">
-    <br>
-    <hr>
-    <h1 class="text-capitalize text-center font-weight-bolder">{{object.username}}</h1>
-    <hr>
-    <div class="text-center w-10">
-        <img src="/media/{{object.avatar.image}}" alt="" class="rounded-circle border border-danger" height="199"
-             width="199">
+<main class="bg-dark">
+    <div data-view-component="true" class="text-white flex-shrink-0 col-12 col-md-3 mb-4 mb-md-0">
+        <br>
+        <div class="text-center w-10">
+            <a href="{% url 'game:avatars' %}">
+                <img src="/media/{{object.avatar.image}}" alt=""
+                     class="rounded-circle width-full border color-bg-primary m-3" height="260"
+                     width="260">
+            </a>
+        </div>
+        <h1>
+            <span class=" d-block overflow-hidden m-3">{{object.username}}</span>
+        </h1>
+        <span class=" d-block m-3">{{object.email_address}}</span>
+        <div class="m-3 f4">
+            <div>
+                {{object.bio}}
+            </div>
+        </div>
+        <a href="#edit" class="btn btn-light m-3">Edit profile</a><br>
+        {% if object.location.name == "" %}
+        <p class="m-3">No location Entered.</p>
+        {% else %}
+        <svg class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="16" height="16"
+             aria-hidden="true">
+            <path fill-rule="evenodd"
+                  d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path>
+        </svg>
+        <span class="p-label m-3">{{object.location.name}}</span>
+        {% endif %}
     </div>
+    
+<div data-view-component="true" class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0">
+  <div class="position-relative text-light">
+        <h2 class="f4 mb-2 text-normal text-center">Groups</h2>
+        {% if object.leader.name == "" and object.defender.name == "" and object.middlemen.name == "" and object.capturer.name == "" %}
+           <p class="text-warning">NO GROUPS WERE FOUND</p>
+        {% else %}
+           <h6 class="m-3">Groups were {{object.username}} is  a leader</h6>
+           <img src="/media/{{object.leader.logo}}"
+             class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99" alt="Not A Leader In Any Group">
+           {{object.leader}}
+           <p class="text-light m-3">{{object.leader.doc}}</p>
+           <h6 class="m-3">Groups were {{object.username}} is  a defender</h6>
+           <img src="/media/{{object.defender.logo}}"
+             class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99" alt="Not A Leader In Any Group">
+           {{object.defender}}
+           <p class="text-light m-3">{{object.defender.doc}}</p>
+           <h6 class="m-3">Groups were {{object.username}} is  a middlemen</h6>
+           <img src="/media/{{object.middlemen.logo}}"
+             class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99" alt="Not A Leader In Any Group">
+           {{object.middlemen}}
+           <p class="text-light m-3">{{object.middlemen.doc}}</p>
+           <h6 class="m-3">Groups were {{object.username}} is  a capturer</h6>
+           <img src="/media/{{object.capturer.logo}}"
+             class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99" alt="Not A Leader In Any Group">
+           {{object.capturer}}
+           <p class="text-light m-3">{{object.capturer.doc}}</p>
+        {% endif %}
+    </div>
+</div>
     <br>
-    <hr>
-    <p class="text-capitalize text-center">birth date: {{object.birth_date}} <br>location: {{object.location.name}}</p>
-    <hr>
-    <br>
-    <p class="text-center font-weight-bold text-capitalize">
-        {{object.bio}}.
-    </p>
 </main>
+<div class="bg-dark">
+    <hr>
+    <br>
+</div>
+<form action="" method="post" id="edit" class="bg-dark">
+    {% csrf_token %}
+    <div class="container">
+        <h1 class="text-start text-success">Sign Up</h1>
+        <hr>
+        <legend class="text-light"><span class="number">1</span> Your basic info</legend>
+        <div class="row">
+            <div class="col-6 m-3">
+                <input type="text">
+                <br>
+            </div>
+            <div class="col-6 m-3">
+                <input type="text">
+            </div>
+        </div>
+        <div class="col-6 m-3">
+            <input type="text">
+        </div>
+        <div class="col-6 m-3">
+            <input type="text">
+        </div>
+        <legend class="text-light"><span class="number">2</span> Game Info</legend>
+        <div class="col-6 m-3">
+            <input type="text">
+        </div>
+        <div class="col-6 m-3">
+            <input type="text">
+        </div>
+        <div class="col-6 m-3">
+            <input type="text">
+        </div>
+        <div class="container">
+            <button class="text-white btn btn-success m-3">Sign Up</button>
+            <a href="{% url 'game:home' %}" class="btn btn-danger ">Cancel</a>
+        </div>
+    </div>
+</form>
 {% endblock content %}
 </body>
 </html>
