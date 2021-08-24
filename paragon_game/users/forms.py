@@ -13,7 +13,7 @@ class PlayerSigninForm(ModelForm):
 
     class Meta:
         model = Player
-        fields = ['username', 'password', 'bio', 'email_address', 'location', 'birth_date', 'avatar']
+        fields = ['username', 'password', 'bio', 'email_address', 'location', 'birth_date', 'avatar', 'image']
 
 
 class PlayerLoginForm(forms.Form):

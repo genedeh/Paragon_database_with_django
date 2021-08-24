@@ -44,4 +44,4 @@ def login_view(request, error=""):
 
 class PlayerView(DetailView):
     model = Player
-    template_name = r'C:\Users\KidChaos\PycharmProjects\Paragon_with_django\paragon_game\templates\user.html'
+    template_name = 'user.html'

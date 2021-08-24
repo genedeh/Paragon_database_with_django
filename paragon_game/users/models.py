@@ -16,6 +16,7 @@ class Player(models.Model):
     bio = models.TextField(blank=True, default="", null=True)
     location = CountryField(blank_label='SELECT YOUR LOCATION....', blank=True)
     birth_date = models.DateField(null=True)
+    image = models.ImageField(default='default-image.jpg')
     avatar = models.ForeignKey(Avatar, on_delete=models.PROTECT)
 
     def __str__(self):
