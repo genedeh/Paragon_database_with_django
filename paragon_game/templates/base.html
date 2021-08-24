@@ -11,8 +11,41 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
 </head>
+<style>
+    h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+</style>
 <body class="">
-<nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+<nav class="navbar navbar-expand-lg navbar-primary bg-dark border">
     <div class="container-fluid">
         <a class="navbar-brand font-weight-bolder" href="{% url 'game:home' %}">PARAGON</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
