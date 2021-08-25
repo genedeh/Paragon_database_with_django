@@ -41,11 +41,10 @@
                 {{object.bio}}
             </div>
         </div>
-        <p class="display-7 m-4">Avatar:</p> <h4 class="m-4">{{object.avatar.name}}</h4>
+        <p class="display-7 m-4">Avatar:</p> <h4 class="m-4">{{object.avatar.name}}:</h4>
         <img src="/media/{{object.avatar.image}}"
              class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99">
              <br>
-        <a href="#edit" class="btn btn-light m-3">Edit profile</a><br>
         {% if object.location.name == "" %}
         <p class="m-3">No location Entered.</p>
         {% else %}
@@ -93,43 +92,6 @@
     <hr>
     <br>
 </div>
-<form action="" method="post" id="edit" class="bg-dark">
-    {% csrf_token %}
-    <div class="container">
-        <h1 class="text-start text-success">Sign Up</h1>
-        <hr>
-        <legend class="text-light"><span class="number">1</span> Your basic info</legend>
-        <div class="row">
-            <div class="col-6 m-3">
-                <input type="text">
-                <br>
-            </div>
-            <div class="col-6 m-3">
-                <input type="text">
-            </div>
-        </div>
-        <div class="col-6 m-3">
-            <input type="text">
-        </div>
-        <div class="col-6 m-3">
-            <input type="text">
-        </div>
-        <legend class="text-light"><span class="number">2</span> Game Info</legend>
-        <div class="col-6 m-3">
-            <input type="text">
-        </div>
-        <div class="col-6 m-3">
-            <input type="text">
-        </div>
-        <div class="col-6 m-3">
-            <input type="text">
-        </div>
-        <div class="container">
-            <button class="text-white btn btn-success m-3">Sign Up</button>
-            <a href="{% url 'game:home' %}" class="btn btn-danger ">Cancel</a>
-        </div>
-    </div>
-</form>
 {% endblock content %}
 </body>
 </html>
