@@ -6,6 +6,22 @@
 </head>
 <body>
 {% block content %}
+{% if object.just_joined %}
+   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  </svg>
+   <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+    Welcome to Paragon🌌🌌 Player {{object.username}} you can adventure by going to <a href="{% url 'game:avatars' %}">Avatar</a> or <a href="{% url 'game:bloodlines' %}">Bloodlines</a>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% else %}
+  
+{% endif %}
 <main class="bg-dark">
     <div data-view-component="true" class="text-white flex-shrink-0 col-12 col-md-3 mb-4 mb-md-0">
         <br>
@@ -25,6 +41,10 @@
                 {{object.bio}}
             </div>
         </div>
+        <p class="display-7 m-4">Avatar:</p> <h4 class="m-4">{{object.avatar.name}}</h4>
+        <img src="/media/{{object.avatar.image}}"
+             class="rounded-circle width-full border color-bg-primary m-3" width="99" , height="99">
+             <br>
         <a href="#edit" class="btn btn-light m-3">Edit profile</a><br>
         {% if object.location.name == "" %}
         <p class="m-3">No location Entered.</p>

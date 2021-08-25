@@ -17,6 +17,7 @@ class Player(models.Model):
     location = CountryField(blank_label='SELECT YOUR LOCATION....', blank=True)
     birth_date = models.DateField(null=True)
     image = models.ImageField(default='default-image.jpg')
+    just_joined = models.BooleanField(default=False)
     avatar = models.ForeignKey(Avatar, on_delete=models.PROTECT)
 
     def __str__(self):

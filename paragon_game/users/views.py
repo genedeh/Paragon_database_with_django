@@ -13,6 +13,7 @@ def sign_in_view(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.slug = slugify(post.username)
+            post.just_joined = True
             post.save()
             return redirect(post.get_absolute_url())
     else:
@@ -32,6 +33,8 @@ def login_view(request, error=""):
                 play_list = list(play)
                 for p in play_list:
                     join_url = p.get_absolute_url()
+                    p.just_joined = False
+                    p.save()
                 return redirect(join_url)
             else:
                 error = "  Username or Password is  not correct please check you Username and Password."
