@@ -7,6 +7,11 @@ from django.views.generic import DetailView
 
 
 # Create your views here.
+def public_player_view(request):
+    model = Player.objects.all()
+    return render(request, 'players.html', {'model': model})
+
+
 def sign_in_view(request):
     if request.method == "POST":
         form = PlayerSigninForm(request.POST)
