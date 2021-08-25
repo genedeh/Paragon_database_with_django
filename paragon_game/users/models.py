@@ -31,11 +31,11 @@ class Group(models.Model):
     name = models.CharField(max_length=369, unique=True)
     leader = models.OneToOneField("Player", on_delete=models.PROTECT, unique=True, primary_key=True,
                                   related_name='leader')
-    defender = models.OneToOneField("Player", on_delete=models.PROTECT, default="", blank=True,
+    defender = models.OneToOneField("Player", on_delete=models.SET_NULL, default="", blank=True,
                                     related_name="defender", null=True)
-    middlemen = models.OneToOneField("Player", on_delete=models.PROTECT, default="", blank=True,
+    middlemen = models.OneToOneField("Player", on_delete=models.SET_NULL, default="", blank=True,
                                      related_name="middlemen", null=True)
-    capturer = models.OneToOneField("Player", on_delete=models.PROTECT, default="", blank=True,
+    capturer = models.OneToOneField("Player", on_delete=models.SET_NULL, default="", blank=True,
                                     related_name='capturer', null=True)
     logo = models.ImageField()
     doc = models.TextField(verbose_name="Documentation")
