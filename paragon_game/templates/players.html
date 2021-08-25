@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Players{% endblock title %}</title>
+</head>
+<body>
+{% block content %}
+{% for players in model %}
+<div class="row">
+    <hr class="text-dark">
+    <div class="card mb-3 text-primary bg-dark shadow-lg p-3 rounded col-sm" style="max-width: 540px;"
+         id="{{players.username}}">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="media/{{players.image}}" class="card-img img-thumbnail bg-success" alt="{{ava.name}}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-primary text-uppercase text-center">{{players.username}}</h5>
+                    <p class="card-text text-center">Bio: {{players.bio}}</p>
+                    <p class="card-text"><small class="text-success text-center">Avatar: {{players.avatar.name}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+{% endblock content %}
+</body>
+</html>
