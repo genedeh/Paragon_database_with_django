@@ -7,11 +7,14 @@
 <body>
 {% block content %}
 <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
-  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-  <div>
-    This all of our Players if you want to join head up to here <a href="{% url 'users:Signin' %}">Join</a> add become known
-  </div>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+        <use xlink:href="#check-circle-fill"/>
+    </svg>
+    <div>
+        This all of our Players if you want to join head up to here <a href="{% url 'users:Signin' %}">Join</a> add
+        become known
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {% for players in model %}
 <div class="row">
@@ -20,20 +23,22 @@
          id="{{players.username}}">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="media/{{players.image}}" class="rounded-circle width-full border color-bg-primary m-3" alt="{{ava.name}}" height="180"
+                <img src="media/{{players.image}}" class="rounded-circle width-full border color-bg-primary m-3"
+                     alt="{{players.username}}" height="180"
                      width="180">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title text-primary text-uppercase text-center">{{players.username}}</h5>
                     <p class="card-text text-center m-3">Bio: {{players.bio}}</p>
-                    <p class="card-text"><small class="text-success text-center m-3">Avatar: {{players.avatar.name}}</small></p>
+                    <p class="card-text"><small class="text-success text-center m-3">Avatar:
+                        {{players.avatar.name}}</small></p>
                 </div>
             </div>
         </div>
     </div>
 
-{% endfor %}
-{% endblock content %}
+    {% endfor %}
+    {% endblock content %}
 </body>
 </html>

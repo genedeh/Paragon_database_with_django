@@ -2,14 +2,19 @@ from django.shortcuts import render, redirect
 from django.template.defaultfilters import slugify
 
 from .forms import PlayerSigninForm, PlayerLoginForm
-from .models import Player
+from .models import Player, Group
 from django.views.generic import DetailView
 
 
 # Create your views here.
 def public_player_view(request):
-    model = Player.objects.all()
+    model = Player.objects.all().order_by('username')
     return render(request, 'players.html', {'model': model})
+
+
+def public_group_view(request):
+    model = Group.objects.all().order_by('name')
+    return render(request, 'groups.html', {'model': model})
 
 
 def sign_in_view(request):
