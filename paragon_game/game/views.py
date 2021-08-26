@@ -16,10 +16,10 @@ def home_view(request):
 
 
 def avatar_view(request):
-    avatar = Avatar.objects.all
+    avatar = Avatar.objects.all().order_by('name')
     return render(request, "Avatars.html", {"avatar": avatar})
 
 
 def bloodline_view(request):
-    bloodline = Bloodline.objects.all
+    bloodline = Bloodline.objects.all().order_by('name')
     return render(request, "Bloodlines.html", {"bloodline": bloodline})
