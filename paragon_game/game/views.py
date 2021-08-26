@@ -21,5 +21,5 @@ def avatar_view(request):
 
 
 def bloodline_view(request):
-    bloodline = Bloodline.objects.all().order_by('name')
+    bloodline = Bloodline.objects.all().order_by('power_level')
     return render(request, "Bloodlines.html", {"bloodline": bloodline})
