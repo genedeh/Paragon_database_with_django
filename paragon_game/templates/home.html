@@ -8,9 +8,9 @@
 <body>
 {% block content %}
 <div class="container">
-    <hr>
-    <h1 class="text-dark text-center font-weight-bolder">AVATARS</h1>
-    <hr>
+    <hr class="text-light">
+    <h1 class="text-light text-center font-weight-bolder">AVATARS</h1>
+    <hr class="text-light">
     <div class="row">
         <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar1.jpg" class="img-thumbnail"
                                                                  alt=""></a></div>
@@ -22,13 +22,12 @@
         <div class="col"><a href="{% url 'game:avatars' %}"><img src="media/home_page_avatar4.jpg" class="img-thumbnail"
                                                                  alt=""></a></div>
     </div>
-    <hr>
-    <p class="text-dark font-weight-bold text-center text-uppercase">we have up to ({{avatar_num}}) AVATARS,
+    <hr class="text-light">
+    <p class="text-light font-weight-bold text-center text-uppercase">we have up to ({{avatar_num}}) AVATARS,
         ({{bloodline_num}}) bloodlines and ({{player_num}}) users</p>
-    <hr>
-    <hr>
-    <h1 class="text-dark text-center font-weight-bolder">BLOODLINES</h1>
-    <hr>
+    <hr class="text-light">
+    <h1 class="text-light text-center font-weight-bolder">BLOODLINES</h1>
+    <hr class="text-light">
     <div class="row">
         <div class="col"><a href="{% url 'game:bloodlines' %}"><img src="media/CrystalNew.png" class="img-thumbnail"
                                                                     alt=""></a></div>

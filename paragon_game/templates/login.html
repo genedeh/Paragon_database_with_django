@@ -20,6 +20,8 @@
     margin-bottom: 24px;
 }
 
+
+
 </style>
 <br>
 {% if error == "" %}
@@ -39,7 +41,7 @@
     {% csrf_token %}
     <div class="container border">
         <br>
-        <h1 class="text-start text-success">Login</h1>
+        <h1 class="text-start text-light">Login</h1>
         <hr>
         <div class="row">
             <div class="col-6 m-3">
@@ -55,7 +57,7 @@
         <br>
         <a href="{% url 'game:home' %}" class="login-btn btn btn-danger">Cancel</a>
         <br>
-        <button type="submit" class="btn btn-dark login-btn">Login</button>
+        <button type="submit" class="btn btn-light login-btn">Login</button>
     </div>
 </form>
 <br>

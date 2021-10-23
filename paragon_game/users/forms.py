@@ -16,6 +16,10 @@ class PlayerSigninForm(ModelForm):
         fields = ['username', 'password', 'bio', 'email_address', 'location', 'birth_date', 'avatar', 'image']
 
 
+class GroupCreate(ModelForm):
+    name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter GroupName...'}))
+
+
 class PlayerLoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Username...'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter Password...'}))

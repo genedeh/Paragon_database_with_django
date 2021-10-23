@@ -16,10 +16,6 @@
   margin: 0 0 30px 0;
   text-align: center;
 }
-body {
-  font-family: 'Nunito', sans-serif;
-  color: #384047;
-}
 legend {
   font-size: 1.4em;
   margin-bottom: 10px;
@@ -30,8 +26,8 @@ label {
   margin-bottom: 8px;
 }
 .number {
-  background-color: #5fcf80;
-  color: #fff;
+  background-color: white;
+  color: black;
   height: 30px;
   width: 30px;
   display: inline-block;
@@ -43,13 +39,12 @@ label {
   border-radius: 100%;
 }
 
-
-
 </style>
-<body class="">
-<nav class="navbar navbar-expand-lg navbar-primary bg-dark border">
+<body class="bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand font-weight-bolder" href="{% url 'game:home' %}">PARAGON</a>
+        <a class="navbar-brand font-weight-bolder text-light" href="{% url 'game:home' %}"
+           style="font-size:4ch">PARAGON</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">🎮</span>
@@ -57,24 +52,21 @@ label {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-success" href="{% url 'game:avatars' %}">Avatars</a>
+                    <a class="nav-link text-light" href="{% url 'game:avatars' %}">Avatars</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-success " href="{% url 'game:bloodlines' %}">Bloodlines</a>
+                    <a class="nav-link text-light " href="{% url 'game:bloodlines' %}">Bloodlines</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-success " href="{% url 'users:public_groups' %}">Create a group</a>
+                    <a class="nav-link text-light " href="{% url 'users:public_groups' %}">Create a group</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-success " href="{% url 'users:public_players' %}">Players</a>
+                    <a class="nav-link text-light " href="{% url 'users:public_players' %}">Players</a>
                 </li>
             </ul>
-            <li class="nav-item">
-                <a href="{% url 'users:login' %}" class="btn btn-success mbt-3">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'users:Signin'  %}" class="btn btn-success mbt-3">Sign up</a>
-            </li>
+            <a href="{% url 'users:login' %}" class="btn btn-light mbt-3">Login</a>
+            <b class="m-3">/</b>
+            <a href="{% url 'users:Signin'  %}" class="btn btn-light mbt-3">Sign up</a>
         </div>
     </div>
 </nav>

@@ -17,6 +17,10 @@ def public_group_view(request):
     return render(request, 'groups.html', {'model': model})
 
 
+def group_View(request):
+    pass
+
+
 def sign_in_view(request):
     if request.method == "POST":
         form = PlayerSigninForm(request.POST)

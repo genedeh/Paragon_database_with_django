@@ -20,14 +20,12 @@
     margin-bottom: 24px;
 }
 
-
-
 </style>
 <br>
 <form action="" method="post">
     {% csrf_token %}
     <div class="container">
-        <h1 class="text-start text-success">Sign Up</h1>
+        <h1 class="text-start text-light">Sign Up</h1>
         <hr>
         <legend><span class="number">1</span> Your basic info</legend>
         <div class="row">
@@ -58,7 +56,7 @@
             {{ form.bio|as_crispy_field }}
         </div>
         <div class="container">
-            <button class="text-white btn btn-dark signin-btn">Sign Up</button>
+            <button class="text-dark btn btn-light signin-btn">Sign Up</button>
             <a href="{% url 'game:home' %}" class="btn btn-danger signin-btn ">Cancel</a>
         </div>
     </div>
